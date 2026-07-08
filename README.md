@@ -598,7 +598,7 @@ Where write directly goes to the database or permanent storage, bypassing the ca
 
 **Pro**: This may reduce latency.
 
-**Con**: It increases cache misses because the cache system has to read the information from the database in case of a cache miss. As a result, this can lead to higher read latency in the case of applications that write and re-read the information quickly. Read happen from slower back-end storage and experiences higher latency.
+**Con**: It increases cache misses because the cache system has to read the information from the database in case of a cache miss. As a result, this can lead to higher read latency in the case of applications that write and re-read the information quickly. Reads happen from slower back-end storage and experience higher latency.
 
 ### Write-back cache
 
@@ -1434,7 +1434,7 @@ Boyce-Codd normal form (or BCNF) is a slightly stronger version of the third nor
 
 For a table to be in the Boyce-Codd normal form (BCNF), it should follow the following rules:
 
-- Satisfied the third normal form (3NF).
+- Satisfies the third normal form (3NF).
 - For every functional dependency X → Y, X should be the super key.
 
 _There are more normal forms such as 4NF, 5NF, and 6NF but we won't discuss them here. Check out this [amazing video](https://www.youtube.com/watch?v=GFQaEYEc8_8) that goes into detail._
@@ -2354,7 +2354,7 @@ Let's discuss some microservices best practices:
 Below are some common pitfalls of microservices architecture:
 
 - Service boundaries are not based on the business domain.
-- Underestimating how hard is to build a distributed system.
+- Underestimating how hard it is to build a distributed system.
 - Shared database or common dependencies between services.
 - Lack of Business Alignment.
 - Lack of clear ownership.
@@ -3043,7 +3043,7 @@ Here are some common use cases for Geohashing:
 Geohashing is widely used and it is supported by popular databases.
 
 - [MySQL](https://www.mysql.com)
-- [Redis](http://redis.io)
+- [Redis](https://redis.io)
 - [Amazon DynamoDB](https://aws.amazon.com/dynamodb)
 - [Google Cloud Firestore](https://cloud.google.com/firestore)
 
@@ -3099,7 +3099,7 @@ Let's discuss circuit breaker states:
 
 ### Closed
 
-When everything is normal, the circuit breakers remain closed, and all the request passes through to the services as normal. If the number of failures increases beyond the threshold, the circuit breaker trips and goes into an open state.
+When everything is normal, the circuit breakers remain closed, and all the requests pass through to the services as normal. If the number of failures increases beyond the threshold, the circuit breaker trips and goes into an open state.
 
 ### Open
 
@@ -4426,7 +4426,7 @@ Our system should meet the following requirements:
 - Should have a newsfeed feature consisting of tweets from the people the user is following.
 - Should be able to search tweets.
 
-### Non-Functional requirements
+### Non-functional requirements
 
 - High availability with minimal latency.
 - The system should be scalable and efficient.
@@ -4832,7 +4832,7 @@ Our system should meet the following requirements:
 - Users should be able to search for videos using titles or tags.
 - Users should be able to comment on a video similar to YouTube.
 
-### Non-Functional requirements
+### Non-functional requirements
 
 - High availability with minimal latency.
 - High reliability, no uploads should be lost.
@@ -5245,7 +5245,7 @@ We will design our system for two types of users: Customers and Drivers.
 - Once a driver accepts the ride, they should see the pickup location of the customer.
 - Drivers should be able to mark the trip as complete on reaching the destination.
 
-### Non-Functional requirements
+### Non-functional requirements
 
 - High reliability.
 - High availability with minimal latency.
@@ -5389,7 +5389,7 @@ cancelRide(customerID: UUID, reason?: string): boolean
 
 Customer ID (`UUID`): ID of the customer.
 
-Reason (`UUID`): Reason for canceling the ride _(optional)_.
+Reason (`string`): Reason for canceling the ride _(optional)_.
 
 **Returns**
 
